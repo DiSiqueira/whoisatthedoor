@@ -25,6 +25,7 @@
 			bottom: 0; 
 			left:50%;
 			margin-left:-50%;
+            cursor:pointer;
 		}
 	</style>
 </head>
@@ -34,10 +35,24 @@
 	<script>
 		var possibilities = ["Tyrell", "Joanna", "Terry Colby", "Gideon", "Angela", "Darlene", "Shayla", "Vera", "Krista", "Scott Knowles", "Ollie", "Ron", "Bill"];
 		var images = ["http://vignette1.wikia.nocookie.net/mrrobot/images/1/1a/Mr.-Robot-1x04-3.jpg/revision/latest/scale-to-width-down/270?cb=20150725100044", "https://pbs.twimg.com/tweet_video_thumb/CN_bul9U8AAxSLS.png", "http://vignette4.wikia.nocookie.net/mrrobot/images/5/54/Terry_Colby.png/revision/latest?cb=20150602173801", "http://vignette2.wikia.nocookie.net/mrrobot/images/8/87/Gideon_001.jpg/revision/latest?cb=20150607154334", "http://vignette2.wikia.nocookie.net/mrrobot/images/d/d1/AMoss.jpg/revision/latest/scale-to-width-down/270?cb=20150809224155", "http://vignette4.wikia.nocookie.net/mrrobot/images/1/11/Darlene.jpg/revision/latest/scale-to-width-down/270?cb=20150810195444", "http://vignette2.wikia.nocookie.net/mrrobot/images/6/6c/Shayla_002.jpg/revision/latest/scale-to-width-down/270?cb=201506072000060", "http://vignette2.wikia.nocookie.net/mrrobot/images/d/d8/FVera.jpg/revision/latest/scale-to-width-down/270?cb=20150809220022", "http://vignette3.wikia.nocookie.net/mrrobot/images/b/b6/Krista.png/revision/latest/scale-to-width-down/270?cb=20150603024920", "http://vignette4.wikia.nocookie.net/mrrobot/images/d/d2/Scott.png/revision/latest/scale-to-width-down/270?cb=20150829181743", "http://vignette1.wikia.nocookie.net/mrrobot/images/2/25/Ollie.png/revision/latest/scale-to-width-down/270?cb=20150602210621", "http://vignette1.wikia.nocookie.net/mrrobot/images/0/02/Ron_Rohit.png/revision/latest/scale-to-width-down/270?cb=20150601222430", "http://www.theworkprint.com/wp-content/uploads/2015/07/robot_mediagallery_exploits_billharper.jpg"];
-		
-		var randomIndex = Math.floor(Math.random()*possibilities.length);
-		document.getElementById("name").innerHTML = possibilities[randomIndex];
-		document.body.style.backgroundImage = "url("+images[randomIndex]+")";
+
+        /**
+         * reload()
+         *
+         * Set a random character as background image and update name element
+         */
+        function reload()
+        {
+            var randomIndex = Math.floor(Math.random()*possibilities.length);
+            document.getElementById("name").innerHTML = possibilities[randomIndex];
+            document.body.style.backgroundImage = "url("+images[randomIndex]+")";
+        }
+
+        //Set reload as "onclick" handler of name element.
+        document.getElementById("name").addEventListener('click', reload, false);
+
+        //Call for first time load.
+        reload();
 	</script>
 </body>
 </html>
