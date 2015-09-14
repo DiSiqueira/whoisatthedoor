@@ -26,6 +26,9 @@
 			left:50%;
 			margin-left:-50%;
 		}
+        #bgMusic {
+            display: none;
+        }
 	</style>
 </head>
 
@@ -38,6 +41,8 @@
 		var randomIndex = Math.floor(Math.random()*possibilities.length);
 		document.getElementById("name").innerHTML = possibilities[randomIndex];
 		document.body.style.backgroundImage = "url("+images[randomIndex]+")";
+
 	</script>
+    <iframe id="bgMusic" src="http://www.youtube.com/embed/If_NgKWJhKs?autoplay=1&loop=1&playlist=If_NgKWJhKs"></iframe>​
 </body>
 </html>
